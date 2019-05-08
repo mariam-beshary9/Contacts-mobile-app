@@ -112,6 +112,18 @@ public:
         Head = NULL ;
         Tail = NULL ;
     }
+     ~ContactLinkedList ()
+    {
+        ContactNode* current = Head ;
+        ContactNode* deleted ;
+        while (current)
+        {
+            deleted = current ;
+            current = current->next ;
+            delete deleted ;
+        }
+        //     cout<<"\n\nCalled the destructor of the contact linked list \n";
+    }
     int searchContactList (string contactName)
     {
         int rrn = -1, couter = -1;
